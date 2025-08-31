@@ -16,6 +16,8 @@ const LoginContainer = styled.div`
   align-items: center;
   min-height: 100vh;
   background: #f4f7f9;
+  padding: 20px; /* Ensures padding on small screens */
+  box-sizing: border-box; /* Includes padding in the element's total width */
 `;
 
 const FormWrapper = styled(motion.div)`
@@ -23,7 +25,8 @@ const FormWrapper = styled(motion.div)`
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 100%; /* Makes the card full-width on mobile */
+  max-width: 400px; /* Limits the max-width on larger screens */
 `;
 
 const FormHeader = styled.h2`
@@ -110,7 +113,6 @@ const StyledLink = styled.a`
 `;
 
 const Login = () => {
-  // ... rest of the component is unchanged
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const { login } = useContext(UserContext);

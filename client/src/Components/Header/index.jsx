@@ -326,52 +326,83 @@ const Header = () => {
       <TopStrip>
         <TopStripContent>
           {isMobile ? (
-            <ContactInfoContainer style={{ display: "flex" }}>
-              <ContactInfoItem>
-                <FontAwesomeIcon icon={faPhone} />
-                015 001 1117 / 079 297 9852
-              </ContactInfoItem>
-              <ContactInfoItem>
-                <FontAwesomeIcon icon={faEnvelope} />
-                pontsho@ntirano.co.za
-              </ContactInfoItem>
-            </ContactInfoContainer>
+            // Mobile: Always display Contact Info, and login/register
+            <Box sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              width: '100%',
+              alignItems: 'center',
+              gap: '10px'
+            }}>
+              <ContactInfoContainer style={{ display: "flex" }}>
+                <ContactInfoItem>
+                  <FontAwesomeIcon icon={faPhone} />
+                  015 001 1117 / 079 297 9852
+                </ContactInfoItem>
+                <ContactInfoItem>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  pontsho@ntirano.co.za
+                </ContactInfoItem>
+              </ContactInfoContainer>
+              <RightButtonsContainer>
+                {user ? (
+                  <>
+                    <WelcomeText>Welcome back!</WelcomeText>
+                    <LogoutButton onClick={logout}>
+                      <FontAwesomeIcon icon={faSignOutAlt} />
+                      Logout
+                    </LogoutButton>
+                  </>
+                ) : (
+                  <>
+                    <TopStripButton to="/login">
+                      <FontAwesomeIcon icon={faSignInAlt} />
+                      Login
+                    </TopStripButton>
+                    <TopStripButton to="/register">
+                      <FontAwesomeIcon icon={faUserPlus} />
+                      Create Account
+                    </TopStripButton>
+                  </>
+                )}
+              </RightButtonsContainer>
+            </Box>
           ) : (
-            <ContactInfoContainer>
-              <ContactInfoItem>
-                <FontAwesomeIcon icon={faPhone} />
-                079 297 9852
-              </ContactInfoItem>
-              <ContactInfoItem>
-                <FontAwesomeIcon icon={faEnvelope} />
-                pontsho@ntirano.co.za
-              </ContactInfoItem>
-            </ContactInfoContainer>
-          )}
-
-          {!isMobile && (
-            <RightButtonsContainer>
-              {user ? (
-                <>
-                  <WelcomeText>Welcome back!</WelcomeText>
-                  <LogoutButton onClick={logout}>
-                    <FontAwesomeIcon icon={faSignOutAlt} />
-                    Logout
-                  </LogoutButton>
-                </>
-              ) : (
-                <>
-                  <TopStripButton to="/login">
-                    <FontAwesomeIcon icon={faSignInAlt} />
-                    Login
-                  </TopStripButton>
-                  <TopStripButton to="/register">
-                    <FontAwesomeIcon icon={faUserPlus} />
-                    Create Account
-                  </TopStripButton>
-                </>
-              )}
-            </RightButtonsContainer>
+            // Desktop: Display contact info on left, and login/register on right
+            <>
+              <ContactInfoContainer>
+                <ContactInfoItem>
+                  <FontAwesomeIcon icon={faPhone} />
+                  079 297 9852
+                </ContactInfoItem>
+                <ContactInfoItem>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  pontsho@ntirano.co.za
+                </ContactInfoItem>
+              </ContactInfoContainer>
+              <RightButtonsContainer>
+                {user ? (
+                  <>
+                    <WelcomeText>Welcome back!</WelcomeText>
+                    <LogoutButton onClick={logout}>
+                      <FontAwesomeIcon icon={faSignOutAlt} />
+                      Logout
+                    </LogoutButton>
+                  </>
+                ) : (
+                  <>
+                    <TopStripButton to="/login">
+                      <FontAwesomeIcon icon={faSignInAlt} />
+                      Login
+                    </TopStripButton>
+                    <TopStripButton to="/register">
+                      <FontAwesomeIcon icon={faUserPlus} />
+                      Create Account
+                    </TopStripButton>
+                  </>
+                )}
+              </RightButtonsContainer>
+            </>
           )}
         </TopStripContent>
       </TopStrip>
@@ -383,7 +414,6 @@ const Header = () => {
                 <img src={logo} alt="" />
               </LogoSize>
             </Link>
-
             <Box>
               {isMobile ? (
                 <MenuButton
@@ -407,7 +437,6 @@ const Header = () => {
                       Rules of Auction
                     </RulesBadgeLink>
                   </List>
-
                   <List
                     onMouseEnter={() => handleMouseEnter("business")}
                     onMouseLeave={() => handleMouseLeave("business")}

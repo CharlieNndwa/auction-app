@@ -15,6 +15,8 @@ const RegisterContainer = styled.div`
   align-items: center;
   min-height: 100vh;
   background: #f4f7f9;
+  padding: 20px; /* Add padding for smaller screens */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width */
 `;
 
 const FormWrapper = styled(motion.div)`
@@ -22,7 +24,8 @@ const FormWrapper = styled(motion.div)`
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 100%; /* Make it full width on small screens */
+  max-width: 400px; /* Limit max width for desktop */
 `;
 
 const FormHeader = styled.h2`
@@ -37,6 +40,7 @@ const FormInput = styled.div`
   position: relative;
   margin-bottom: 20px;
   input {
+    box-sizing: border-box; /* Ensures padding is part of the width */
     width: 100%;
     padding: 12px 12px 12px 40px;
     border: 1px solid #ddd;
@@ -109,7 +113,7 @@ const StyledLink = styled.a`
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
+    name: "", // Changed from firstName to name
     email: "",
     password: "",
   });
@@ -126,7 +130,6 @@ const Register = () => {
         `${process.env.REACT_APP_BACKEND_URL}/api/users/register`,
         formData
       );
-      // Change the success message here
       toast.success("Registration successful! You can now log in.");
       navigate("/login");
     } catch (error) {
@@ -147,9 +150,9 @@ const Register = () => {
             <FontAwesomeIcon icon={faUser} className="icon" />
             <input
               type="text"
-              name="firstName"
+              name="name" // Changed from firstName to name
               placeholder="First Name"
-              value={formData.firstName}
+              value={formData.name}
               onChange={onChange}
               required
             />
