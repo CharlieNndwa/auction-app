@@ -8,7 +8,9 @@ import { Link } from "react-router-dom";
 const BacgroundImage = styled.div`
   position: relative;
   width: 100%;
-  height: 500px;
+  // Adjusted height for better spacing
+  height: auto; 
+  padding: 50px 0;
   background-image: url(${bgImage});
   background-repeat: no-repeat;
   background-position: center;
@@ -25,12 +27,12 @@ const BacgroundImage = styled.div`
   }
 `;
 
-const StyledUl = styled.ul``;
+const StyledUl = styled.ul`
+  margin: 0;
+  padding: 0;
+`;
 
 const LogoSize = styled.div`
-  position: absolute;
-  z-index: 2;
-
   & img {
     width: 120px;
     height: 100px;
@@ -40,100 +42,95 @@ const LogoSize = styled.div`
 
 const StyledItem = styled.li`
   list-style-type: none;
-  padding: 10px;
+  padding: 5px 0;
 `;
 
 const StyledLinks = styled(Link)`
   text-decoration: none;
   color: white;
+  &:hover {
+    color: #ffd700;
+  }
 `;
-// flexDirection: { xs:"column", sm:"row", lg: "row" },
+
 const Footer = () => {
   return (
-    <Box mt={{ xs: "150px", md: "0px" }}>
+    <Box mt={{ xs: "100px", md: "0px" }}>
       <BacgroundImage>
-        <Container sx={{ height: "100%" }}>
-          <Grid container spacing={2} sx={{ height: "100%" }}>
+        <Container sx={{ position: "relative", zIndex: 2 }}>
+          <Grid container spacing={4} justifyContent="center" alignItems="center">
+            {/* Contact Info Section */}
             <Grid
               item
               xs={12}
               sm={6}
               md={6}
               lg={4}
-              pr="10px"
               sx={{
                 display: "flex",
-                justifyContent: { xs: "center", sm: "flex-start" },
+                flexDirection: "column",
                 alignItems: { xs: "center", sm: "flex-start" },
                 textAlign: { xs: "center", sm: "left" },
-                margin: { xs: "50px 0px" },
               }}
             >
+              {/* Removed absolute positioning */}
               <LogoSize>
-                <img src={logo} alt={logo} />
-                <Box sx={{ color: "#ebebeb" }}>
-                  <Typography>Address: Limpopo, Polokwane</Typography>
-                  <Typography>Tel: 015 001 1117</Typography>
-                  <Typography>Cel: 079 297 9852</Typography>
-                  <Typography>Email: pontsho@ntirano.co.za</Typography>
-                </Box>
+                <img src={logo} alt="Ntiranoo Logo" />
               </LogoSize>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={6}
-              lg={4}
-              sx={{
-                display: "flex",
-                justifyContent: { xs: "center", sm: "flex-start" },
-                alignItems: { xs: "center", sm: "flex-start" },
-                textAlign: { xs: "center", sm: "left" },
-                padding: { xs: "50px 0px" },
-                margin: { xs: "50px 0px" },
-              }}
-            >
-              <Box
-                sx={{
-                  position: "absolute",
-                  zIndex: "2",
-                  textAlign: { xs: "center", md: "left" },
-                  marginTop: { xs: "70px", md: "0px" },
-                  paddingLeft: { xs: "0px", sm: "30px" },
-                }}
-              >
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: "white",
-                    fontSize: "18px",
-                    fontWeight: "400",
-                    margin: "30px 0px",
-                    textAlign: "center",
-                  }}
-                >
-                  Links
-                </Typography>
-                <StyledUl>
-                  <StyledItem>
-                    <StyledLinks to="/">Home</StyledLinks>
-                  </StyledItem>
-                  <StyledItem>
-                    <StyledLinks to="/about">About</StyledLinks>
-                  </StyledItem>
-                  <StyledItem>
-                    <StyledLinks to="/projects">Projects</StyledLinks>
-                  </StyledItem>
-                  <StyledItem>
-                    <StyledLinks to="/bidding-process">How to Bid</StyledLinks>
-                  </StyledItem>
-                  <StyledItem>
-                    <StyledLinks to="/contact">Contact</StyledLinks>
-                  </StyledItem>
-                </StyledUl>
+              <Box sx={{ color: "#ebebeb", mt: 2 }}>
+                <Typography>Address: Limpopo, Polokwane</Typography>
+                <Typography>Tel: 015 001 1117</Typography>
+                <Typography>Cel: 079 297 9852</Typography>
+                <Typography>Email: pontsho@ntirano.co.za</Typography>
               </Box>
             </Grid>
+
+            {/* Links Section */}
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              lg={4}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: { xs: "center", sm: "flex-start" },
+                textAlign: { xs: "center", sm: "left" },
+              }}
+            >
+              {/* Removed absolute positioning */}
+              <Typography
+                variant="h4"
+                sx={{
+                  color: "white",
+                  fontSize: "18px",
+                  fontWeight: "400",
+                  mb: 2,
+                }}
+              >
+                Links
+              </Typography>
+              <StyledUl>
+                <StyledItem>
+                  <StyledLinks to="/">Home</StyledLinks>
+                </StyledItem>
+                <StyledItem>
+                  <StyledLinks to="/about">About</StyledLinks>
+                </StyledItem>
+                <StyledItem>
+                  <StyledLinks to="/projects">Projects</StyledLinks>
+                </StyledItem>
+                <StyledItem>
+                  <StyledLinks to="/bidding-process">How to Bid</StyledLinks>
+                </StyledItem>
+                <StyledItem>
+                  <StyledLinks to="/contact">Contact</StyledLinks>
+                </StyledItem>
+              </StyledUl>
+            </Grid>
+
+            {/* Copyright Section */}
             <Grid
               item
               xs={12}
@@ -141,32 +138,28 @@ const Footer = () => {
               md={12}
               lg={4}
               sx={{
-                marginTop: "30px",
                 display: "flex",
-                justifyContent: { xs: "center", sm: "flex-start" },
-                alignItems: { xs: "center", sm: "flex-start" },
-                textAlign: { xs: "center", sm: "left" },
-                paddingBottom: { xs: "50px" },
-                margin: { xs: "20px 0px 0px 0px", sm: "50px 0px" },
+                flexDirection: "column",
+                alignItems: { xs: "center", lg: "flex-start" },
+                textAlign: { xs: "center", lg: "left" },
               }}
             >
-              <Box sx={{ position: "absolute", zIndex: "2" }}>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    color: "white",
-                    textDecoration: "uppercase",
-                    fontSize: "18px",
-                    fontWeight: "400",
-                    margin: { xs: "0px", sm: "30px 0px" },
-                  }}
-                >
-                  Copyright
-                </Typography>
-                <Typography sx={{ color: "white" }}>
-                  Copyright © 2025 | NTIRANO AUCTIONEERS
-                </Typography>
-              </Box>
+              {/* Removed absolute positioning */}
+              <Typography
+                variant="h4"
+                sx={{
+                  color: "white",
+                  textTransform: "uppercase",
+                  fontSize: "18px",
+                  fontWeight: "400",
+                  mb: 2,
+                }}
+              >
+                Copyright
+              </Typography>
+              <Typography sx={{ color: "white" }}>
+                Copyright © 2025 | NTIRANO AUCTIONEERS
+              </Typography>
             </Grid>
           </Grid>
         </Container>
