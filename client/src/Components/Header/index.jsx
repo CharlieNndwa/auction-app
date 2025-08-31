@@ -327,18 +327,19 @@ const Header = () => {
         <TopStripContent>
           {isMobile ? (
             // Mobile: Always display Contact Info, and login/register
-            <Box sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: '100%',
-              alignItems: 'center',
-              gap: '10px'
-            }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                alignItems: "center",
+                gap: "10px",
+              }}
+            >
               <ContactInfoContainer style={{ display: "flex" }}>
                 <ContactInfoItem>
                   <FontAwesomeIcon icon={faPhone} />
-                  015 001 1117 /
-                   079 297 9852
+                  079 297 9852
                 </ContactInfoItem>
                 <ContactInfoItem>
                   <FontAwesomeIcon icon={faEnvelope} />
