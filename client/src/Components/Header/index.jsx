@@ -329,7 +329,7 @@ const Header = () => {
             <ContactInfoContainer style={{ display: "flex" }}>
               <ContactInfoItem>
                 <FontAwesomeIcon icon={faPhone} />
-                 079 297 9852
+                015 001 1117 / 079 297 9852
               </ContactInfoItem>
               <ContactInfoItem>
                 <FontAwesomeIcon icon={faEnvelope} />
@@ -349,7 +349,30 @@ const Header = () => {
             </ContactInfoContainer>
           )}
 
-        
+          {!isMobile && (
+            <RightButtonsContainer>
+              {user ? (
+                <>
+                  <WelcomeText>Welcome back!</WelcomeText>
+                  <LogoutButton onClick={logout}>
+                    <FontAwesomeIcon icon={faSignOutAlt} />
+                    Logout
+                  </LogoutButton>
+                </>
+              ) : (
+                <>
+                  <TopStripButton to="/login">
+                    <FontAwesomeIcon icon={faSignInAlt} />
+                    Login
+                  </TopStripButton>
+                  <TopStripButton to="/register">
+                    <FontAwesomeIcon icon={faUserPlus} />
+                    Create Account
+                  </TopStripButton>
+                </>
+              )}
+            </RightButtonsContainer>
+          )}
         </TopStripContent>
       </TopStrip>
       <HeaderStyle $isScrolled={mobileStaticMenu}>
