@@ -337,7 +337,8 @@ const Header = () => {
               <ContactInfoContainer style={{ display: "flex" }}>
                 <ContactInfoItem>
                   <FontAwesomeIcon icon={faPhone} />
-                  015 001 1117 / 079 297 9852
+                  015 001 1117 /
+                   079 297 9852
                 </ContactInfoItem>
                 <ContactInfoItem>
                   <FontAwesomeIcon icon={faEnvelope} />
