@@ -1,0 +1,137 @@
+/* Client.scss */
+
+// Colors and fonts
+$primary-black: #000000;
+$primary-grey: #5a5858ce;
+$primary-white: #ffffff;
+$primary-green: #008000;
+$primary-gold: #FFD700;
+
+.about-section {
+    background-color: $primary-white;
+    color: $primary-black;
+    padding: 60px 0;
+}
+
+.about-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.about-content {
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $primary-green;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .heading-sub {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $primary-grey;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .about-paragraph {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+}
+
+.experience-text-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the text perfectly */
+    color: $primary-white;
+    text-align: center;
+
+    .text:first-child {
+        font-size: 4rem;
+        font-weight: bold;
+        line-height: 1;
+        color: $primary-gold;
+    }
+    
+    .text:last-child {
+        font-size: 1.2rem;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+}
+
+// Existing animation styles - left unchanged
+.active {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    top: 20px;
+    left: 20px;
+    margin: 10px;
+    animation: scaleIn 2s ease-in-out;
+}
+
+.text {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.line-bottom {
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    bottom: 20px;
+    right: 20px;
+    margin: 10px;
+    animation: scaleDown 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        scale: (1);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        top: 20%;
+        left: 20%;
+    }
+    100% {
+        top: 20px;
+        left: 20px;
+    }
+}
+
+@keyframes scaleDown {
+    0% {
+        bottom: 20%;
+        right: 20%;
+    }
+    100% {
+        bottom: 20px;
+        right: 20px;
+    }
+}

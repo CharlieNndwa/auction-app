@@ -1,0 +1,49 @@
+/* Minimal SCSS to complement styled-components and add polish */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rules-card {
+  /* subtle gradient top border accent */
+  position: relative;
+}
+
+.rules-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  border-radius: 18px 18px 0 0;
+  background: linear-gradient(90deg, #0ea5e9, #22c55e, #8b5cf6);
+  opacity: 0.9;
+}
+
+.rules-header h1 {
+  /* tighten letter spacing a bit more on large screens */
+  letter-spacing: -0.3px;
+}
+
+/* Small devices */
+@media (max-width: 640px) {
+  .rules-card {
+    box-shadow: 0 6px 22px rgba(16, 24, 40, 0.06);
+  }
+}
+
+/* Print-friendly tweaks (in case users print the rules) */
+@media print {
+  .rules-card {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb;
+  }
+  .rules-card::before {
+    display: none;
+  }
+}

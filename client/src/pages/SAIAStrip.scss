@@ -1,0 +1,30 @@
+.saia-strip-container {
+    background-color: #f5f5f5; /* A light grey background for contrast */
+    padding: 20px 0; /* Increased padding for better spacing */
+    text-align: center;
+}
+
+.saia-strip-content {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+.saia-logo-wrapper {
+    margin-bottom: 10px; /* Space between the logo and the text */
+}
+
+.saia-logo {
+    height: 60px; /* Adjusted height for better visibility at the top */
+}
+
+.saia-text {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    
+    @media (max-width: 600px) {
+        font-size: 0.9rem;
+    }
+}

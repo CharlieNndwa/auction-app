@@ -1,0 +1,269 @@
+// SCSS for UpcomingAuctions.jsx
+
+$primary-gold: #FFD700;
+$primary-black: #000000;
+$primary-yeet: #0a0044c3;
+$primary-white: #ffffff;
+$secondary-grey: #f0f0f0;
+
+// Main Container
+.upcoming-auctions__container {
+  padding: 80px 0;
+  text-align: center;
+  background-color: $primary-white;
+  color: $primary-black;
+
+  @media (max-width: 767px) {
+    padding: 40px 0;
+  }
+}
+
+// Headings
+.upcoming-auctions__heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: $primary-yeet;
+  margin-bottom: 10px;
+
+  @media (max-width: 767px) {
+    font-size: 2rem;
+  }
+}
+
+.upcoming-auctions__subheading {
+  font-size: 1.2rem;
+  color: $primary-black;
+  margin-bottom: 50px;
+
+  @media (max-width: 767px) {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+}
+
+// Main grid layout
+.upcoming-auction-grid__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+// Individual card styling
+.upcoming-auction-card__item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.upcoming-auction-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.upcoming-auction-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.upcoming-auction-card__content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.upcoming-auction-card__title {
+  font-size: 1.5rem;
+  color: $primary-yeet;
+  margin-bottom: 10px;
+}
+
+.upcoming-auction-card__details {
+  font-size: 1rem;
+  color: $primary-black;
+  margin-bottom: 15px;
+  flex-grow: 1; // Allows content to fill the remaining space
+}
+
+.upcoming-auction-card__countdown {
+  margin-bottom: 20px;
+}
+
+.upcoming-auction-card__btn {
+  width: 100%;
+  background-color: $primary-yeet;
+  color: $primary-white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-yeet, 10%);
+  }
+}
+
+// Countdown Timer Styles
+.countdown__timer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $secondary-grey;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+
+  @media (max-width: 480px) {
+    padding: 8px;
+  }
+}
+
+.time-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $primary-black;
+}
+
+.time-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $primary-yeet;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+}
+
+.time-label {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
+}
+
+.countdown__expired {
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+// React Slick custom styles
+.slick-slider {
+  margin: 0 -15px;
+}
+
+.slick-slide {
+  padding: 0 15px;
+}
+
+.slick-dots li button:before {
+  color: $primary-yeet;
+  font-size: 12px;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: $primary-yeet;
+  font-size: 30px;
+}
+
+// CTA Section
+.see-more__section {
+  background-color: $primary-yeet;
+  color: $primary-white;
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 80px;
+
+  .see-more__heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: $primary-gold;
+  }
+
+  .see-more__subheading {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .see-more__btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: $primary-gold;
+    color: $primary-black;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-gold, 10%);
+      transform: translateY(-3px);
+    }
+
+    .see-more__icon {
+      margin-left: 10px;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+
+.countdown__timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+
+  .time-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    .time-value {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $primary-gold;
+    }
+
+    .time-label {
+      font-size: 0.75rem;
+      color: $secondary-grey;
+    }
+  }
+}
+
+.countdown__expired {
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
+}

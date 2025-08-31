@@ -1,0 +1,89 @@
+// SCSS for Auction Item Details Page
+
+$primary-gold: #FFD700;
+$primary-yeet: #0a0044c3;
+$secondary-grey: #f0f0f0;
+
+.item-details-page {
+  padding: 20px 0;
+  background-color: $secondary-grey;
+  min-height: 100vh;
+  
+  // New code to center the content
+  max-width: 1400px; /* Adjust this value as needed */
+  margin: 0 auto;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+  // Desktop Layout
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.gallery-section {
+  flex: 3;
+}
+
+.info-section {
+  flex: 2;
+}
+
+// Global styles for the page's components
+.MuiPaper-root {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+// Bidding buttons
+.wishlist-button {
+  background-color: $primary-yeet !important;
+  color: #fff !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 50px;
+  
+  &:hover {
+    background-color: darken($primary-yeet, 10%) !important;
+  }
+}
+
+.register-button {
+  background-color: $primary-gold !important;
+  color: #000 !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 50px;
+  
+  &:hover {
+    background-color: darken($primary-gold, 10%) !important;
+  }
+}
+
+// Image Gallery
+.slick-prev:before, .slick-next:before {
+  color: $primary-yeet !important;
+  font-size: 30px;
+}
+
+.slick-dots li button:before {
+  color: $primary-yeet !important;
+}
+
+// General text styles
+.item-title {
+  color: $primary-yeet;
+  font-weight: bold;
+}
+
+.est-price {
+  color: $primary-gold;
+  font-weight: bold;
+}

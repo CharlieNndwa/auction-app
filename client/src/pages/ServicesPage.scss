@@ -1,0 +1,65 @@
+/* ServicesPage.scss */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+// Variables
+$primary-color: #d4d4d4;
+$dark-background: #000000;
+$card-background: #1a1a1a;
+$text-color: #fff;
+$light-text: #ddd;
+
+body {
+    
+    color: $text-color;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.services-page {
+    .services-section, .testimonials-section, .cta-section {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .cta-button {
+        background-color: $primary-color;
+        color: $dark-background;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    
+        &:hover {
+            background-color: lighten($primary-color, 10%);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba($primary-color, 0.4);
+        }
+    }
+
+    .cta-section {
+        text-align: center;
+        padding: 80px 20px;
+        background-color: #111111;
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+    }
+}

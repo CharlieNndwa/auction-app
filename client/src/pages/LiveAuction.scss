@@ -1,0 +1,33 @@
+// SCSS for LiveAuction.jsx
+
+$primary-gold: #FFD700;
+$primary-black: #000000;
+$primary-yeet: #0a0044c3;
+$primary-white: #ffffff;
+$secondary-grey: #f0f0f0;
+
+.live-auction-page {
+  background-color: $secondary-grey;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.lot-section {
+  flex: 3;
+}
+
+.right-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

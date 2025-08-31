@@ -1,0 +1,42 @@
+@import "swiper/scss/navigation";
+
+.carousel-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: static !important;
+  transform: none !important;
+  margin: 0;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  color: #333;
+  width: 35px;
+  height: 35px;
+
+  &::after {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #ddd;
+}
