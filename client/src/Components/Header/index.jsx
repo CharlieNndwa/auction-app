@@ -346,7 +346,7 @@ const Header = () => {
                   pontsho@ntirano.co.za
                 </ContactInfoItem>
               </ContactInfoContainer>
-              <RightButtonsContainer>
+              {/* <RightButtonsContainer>
                 {user ? (
                   <>
                     <WelcomeText>Welcome back!</WelcomeText>
@@ -367,7 +367,7 @@ const Header = () => {
                     </TopStripButton>
                   </>
                 )}
-              </RightButtonsContainer>
+              </RightButtonsContainer> */}
             </Box>
           ) : (
             // Desktop: Display contact info on left, and login/register on right
@@ -382,7 +382,7 @@ const Header = () => {
                   pontsho@ntirano.co.za
                 </ContactInfoItem>
               </ContactInfoContainer>
-              <RightButtonsContainer>
+              {/* <RightButtonsContainer>
                 {user ? (
                   <>
                     <WelcomeText>Welcome back!</WelcomeText>
@@ -403,7 +403,7 @@ const Header = () => {
                     </TopStripButton>
                   </>
                 )}
-              </RightButtonsContainer>
+              </RightButtonsContainer> */}
             </>
           )}
         </TopStripContent>
