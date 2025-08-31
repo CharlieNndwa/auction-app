@@ -20,12 +20,12 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 
 import "./header.scss";
-import MobileMenu from './MobileMenu';
+import MobileMenu from './MobileMenu'; // Import the new mobile menu component
 
 // Updated styled component for the top strip
 const TopStrip = styled.div`
     display: flex;
-    justify-content: center; /* Center the content inside the top strip */
+    justify-content: center;
     align-items: center;
     width: 100%;
     background-color: #000000;
@@ -37,8 +37,8 @@ const TopStripContent = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Or whatever width matches your main navigation */
-    padding: 8px 20px; /* Apply the padding here */
+    max-width: 1200px;
+    padding: 8px 20px;
     box-sizing: border-box;
 `;
 
@@ -120,11 +120,12 @@ const LogoutButton = styled.button`
     }
 `;
 
+// Use transient prop for isScrolled
 const HeaderStyle = styled.div`
     width: 100%;
-    box-shadow: ${({ isScrolled }) => (isScrolled ? '0 1px 3px 0 rgba(127,202,236,.8)' : 'none')};
+    box-shadow: ${({ $isScrolled }) => ($isScrolled ? '0 1px 3px 0 rgba(127,202,236,.8)' : 'none')};
     background: #000000;
-    position: ${({ isScrolled }) => (isScrolled ? 'fixed' : 'static')};
+    position: ${({ $isScrolled }) => ($isScrolled ? 'fixed' : 'static')};
     top: 0;
     left: 0;
     right: 0;
@@ -139,8 +140,9 @@ const SpaceBetween = styled.div`
     align-items: center;
 `;
 
+// Use transient prop for isHovered
 const BussinesServiceList = styled.ul`
-    display: ${({ isHovered }) => (isHovered ? 'block' : 'none')};
+    display: ${({ $isHovered }) => ($isHovered ? 'block' : 'none')};
     position: absolute;
     list-style-type: none;
     padding: 10px;
@@ -151,8 +153,8 @@ const BussinesServiceList = styled.ul`
     background-color: #000000;
     
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    opacity: ${({ isHovered }) => (isHovered ? '1' : '0')};
-    visibility: ${({ isHovered }) => (isHovered ? 'visible' : 'hidden')};
+    opacity: ${({ $isHovered }) => ($isHovered ? '1' : '0')};
+    visibility: ${({ $isHovered }) => ($isHovered ? 'visible' : 'hidden')};
 
     & li {
         margin-bottom: 1px;
@@ -171,6 +173,11 @@ const UnorderedList = styled(Box)`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    // This is the key media query. It hides the desktop menu on screens <= 830px
+    @media (max-width: 830px) {
+        display: none;
+    }
 `;
 
 const StyledLink = styled(Link)`
@@ -212,7 +219,8 @@ const RulesBadgeLink = styled(StyledLink)`
 const MenuButton = styled(IconButton)`
     color: #FFD700 !important;
 
-    @media (min-width: 830px) {
+    // This is the key media query. It displays the button on screens <= 830px
+    @media (min-width: 831px) {
         display: none;
     }
 `;
@@ -301,6 +309,14 @@ const Header = () => {
     }, []);
 
     useEffect(() => {
+        if (isMobileMenuOpen) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
+      }, [isMobileMenuOpen]);
+
+    useEffect(() => {
         setIsMobileMenuOpen(false);
     }, [location]);
 
@@ -345,7 +361,7 @@ const Header = () => {
                     </RightButtonsContainer>
                 </TopStripContent>
             </TopStrip>
-            <HeaderStyle isScrolled={mobileStaticMenu}>
+            <HeaderStyle $isScrolled={mobileStaticMenu}>
                 <Container xs="md">
                     <SpaceBetween>
                         <Link to="/">
@@ -355,10 +371,10 @@ const Header = () => {
                         </Link>
                         
                         <Box>
+                            {/* This is the key change: we're only rendering the desktop menu if the screen is NOT mobile */}
                             {isMobile ? (
-                                <MenuButton edge="start" color="inherit" aria-label="menu" onClick={toggleMobileMenu}
-                                    sx={{ transition: 'transform 0.3s ease', transform: isMobileMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
-                                    {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+                                <MenuButton edge="start" color="inherit" aria-label="menu" onClick={toggleMobileMenu}>
+                                    <MenuIcon />
                                 </MenuButton>
                             ) : (
                                 <UnorderedList>
@@ -373,7 +389,7 @@ const Header = () => {
                                         <StyledLink to="#">
                                             Live Auctions
                                         </StyledLink>
-                                        <BussinesServiceList isHovered={isHoveredBusiness}>
+                                        <BussinesServiceList $isHovered={isHoveredBusiness}>
                                             <List><Link to="/upcoming-auctions">Upcoming Auctions</Link></List>
                                             <List><Link to="/previous-auctions">Previous Auctions</Link></List>
                                             
@@ -388,12 +404,8 @@ const Header = () => {
                         </Box>
                     </SpaceBetween>
                 </Container>
-                {isMobileMenuOpen && (
-                    <MobileMenu onLinkClick={() => setIsMobileMenuOpen(false)} />
-                )}
+                <MobileMenu isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} />
             </HeaderStyle>
-
-        
         </>
     );
 };
