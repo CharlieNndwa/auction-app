@@ -118,49 +118,50 @@ $secondary-grey: #f0f0f0;
 
 /* Past Events Section Styles */
 .past-events__section {
-  background-color: #5c5c5c;
-  padding: 60px 0;
-  margin-top: 80px;
-  text-align: center;
-  color: $primary-white;
-  position: relative; // <-- makes section the anchor for arrows
+    background-color: #5c5c5c;
+    padding: 60px 0;
+    margin-top: 80px;
+    text-align: center;
+    color: $primary-white;
+    position: relative;
+    // Makes section the anchor for arrows
 }
 
 .past-events__heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: $primary-gold;
-  margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $primary-gold;
+    margin-bottom: 40px;
 }
 
 .video-carousel__container {
-  position: relative; /* anchors arrows */
-  max-width: 1200px;
-  margin: 0 auto; /* centers the whole container */
-  padding-top: 60px; /* creates space above video for arrows */
+    position: relative; /* anchors arrows */
+    max-width: 1200px;
+    margin: 0 auto; /* centers the whole container */
+    padding-top: 60px; /* creates space above video for arrows */
 }
 
 .video-carousel__arrow {
-  position: absolute;
-  top: 10px; /* sits arrows above the video box */
-  color: #000; /* arrow color = black */
-  font-size: 2.5rem !important;
-  background-color: #fff; /* background = white */
-  border-radius: 50%;
-  padding: 6px;
-  transition: all 0.2s ease-in-out;
-  z-index: 5;
+    position: absolute;
+    top: 10px; /* sits arrows above the video box */
+    color: #000; /* arrow color = black */
+    font-size: 2.5rem !important;
+    background-color: #fff; /* background = white */
+    border-radius: 50%;
+    padding: 6px;
+    transition: all 0.2s ease-in-out;
+    z-index: 5;
 
-  &:hover {
-    color: #333;
-    background-color: #f2f2f2;
-  }
+    &:hover {
+        color: #333;
+        background-color: #f2f2f2;
+    }
 }
 
 .video-carousel__arrow--right {
-  right: 25px; /* right corner above video */
+    right: 25px; /* right corner above video */
 }
 
 .video-carousel__arrow--left {
-  right: 75px; /* left arrow sits beside right arrow */
+    right: 75px; /* left arrow sits beside right arrow */
 }

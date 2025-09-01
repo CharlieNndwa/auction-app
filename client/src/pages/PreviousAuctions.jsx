@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Container, Grid, Card, CardMedia, CardContent, Typography } from '@mui/material';
 import "./PreviousAuctions.scss";
 import drillRig1 from "../assets/yap.jpg";
@@ -43,7 +42,7 @@ const PreviousAuctions = () => {
         </p>
 
         {/* Auction Cards Grid */}
-        <Grid container spacing={4} className="auction-cards__grid">
+        <Grid container spacing={4} className="auction-cards__grid" justifyContent="center">
           {auctionCards.map((auction) => (
             <Grid item xs={12} sm={6} md={4} key={auction.id}>
               <Card className="auction-card">

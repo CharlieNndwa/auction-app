@@ -5,63 +5,68 @@ $primary-black: #c9c9c9;
 $primary-white: #ffffff;
 $secondary-grey: #f0f0f0;
 
+/* BiddingProcedure.scss */
+
 .bidding-procedure-section {
-    padding: 60px 0;
-    text-align: center;
-    background-color: $primary-black;
-    color: $primary-white;
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
 }
 
 .bidding-procedure-heading {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #1a1a1a;
-    margin-bottom: 50px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
 }
 
 .bidding-procedure-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 
-    @media (min-width: 768px) {
-        flex-direction: row;
-        gap: 40px;
-    }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .bidding-procedure-card {
-    background-color: #1a1a1a;
-    padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    max-width: 350px;
-    width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  flex: 1;
+  max-width: 350px; /* Optional: Sets a max-width for consistency */
+  transition: transform 0.3s ease;
 
-    &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
+  @media (max-width: 768px) {
+    padding: 20px; /* Smaller padding on mobile */
+    max-width: 90%; /* Smaller max-width for mobile responsiveness */
+  }
 
-    .card-icon {
-        font-size: 3rem;
-        color: $primary-gold;
-        margin-bottom: 20px;
-    }
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
 
-    .card-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: $primary-white;
-        margin-bottom: 15px;
-    }
+.card-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
 
-    .card-description {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: $secondary-grey;
-    }
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
 }

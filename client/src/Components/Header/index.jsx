@@ -4,18 +4,18 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton, Box, Container } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+
 import { UserContext } from "../../UserContext";
-import AuthModal from "../pages/Home/AuthModal";
+
 
 // Import icons from your Font Awesome package
 import {
-  faHome,
-  faSignInAlt,
-  faUserPlus,
+  
+
+
   faPhone,
   faEnvelope,
-  faSignOutAlt,
+
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

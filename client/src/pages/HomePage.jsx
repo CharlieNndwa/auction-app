@@ -2,7 +2,7 @@ import React from "react";
 import AuctionCardCarousel from "../Components/pages/Home/AuctionCardCarousel"; // Import the new carousel component
 import Client from "../Components/pages/Home/Client";
 import Specialization from "../Components/pages/Home/Specialization";
-import ImageGrid from "../Components/pages/Home/ImageGrid";
+
 import Partners from "../Components/pages/Home/Partners";
 import SAIAstrip from "./SAIAStrip";
 
