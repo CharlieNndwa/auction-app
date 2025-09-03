@@ -339,7 +339,7 @@ const Header = () => {
                   079 297 9852
                 </ContactInfoItem>
                 <ContactInfoItem>
-                  <FontAwesomeIcon icon={ faMapMarkerAlt} />
+                  <FontAwesomeIcon icon={faEnvelope} />
                   pontsho@ntirano.co.za
                 </ContactInfoItem>
               </ContactInfoContainer>
@@ -379,7 +379,7 @@ const Header = () => {
                   pontsho@ntirano.co.za
                 </ContactInfoItem>
                 <ContactInfoItem>
-                  <FontAwesomeIcon icon={faLocation} />
+                  <FontAwesomeIcon icon={faMapMarkerAlt} />
                   427 Rapitsi Village, Limpopo
                 </ContactInfoItem>
               </ContactInfoContainer>
