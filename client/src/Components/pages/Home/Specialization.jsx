@@ -1,42 +1,112 @@
 
 import React from 'react';
-import { Box, Container } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGavel, faClock, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { Box, Container, Grid, Card, CardContent, Typography, CardMedia } from '@mui/material';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import experienceImage from "../../../assets/exp.jpg";
+import teamImage from "../../../assets/teams.jpg";
+import membershipImage from "../../../assets/auc.jpg";
 
-import "./BiddingProcedure.scss";
 
-const BiddingProcedure = () => {
-    return (
-        <Box className="bidding-procedure-section">
-            <Container>
-                <h2 className="bidding-procedure-heading">Bidding Procedure:</h2>
-                <Box className="bidding-procedure-cards">
-                    <Box className="bidding-procedure-card">
-                        <FontAwesomeIcon icon={faGavel} className="card-icon" />
-                        <h3 className="card-title">Register & Verify</h3>
-                        <p className="card-description">
-                            Before bidding, you must register and get verified. This process ensures the security and integrity of all auctions. Once verified, you will be able to place bids.
-                        </p>
-                    </Box>
-                    <Box className="bidding-procedure-card">
-                        <FontAwesomeIcon icon={faClock} className="card-icon" />
-                        <h3 className="card-title">Place Your Bid</h3>
-                        <p className="card-description">
-                            You can bid in timed online auctions or real-time webcasts. In timed auctions, you have until the closing time to place your bid. The highest bid at the end of the auction wins the item.
-                        </p>
-                    </Box>
-                    <Box className="bidding-procedure-card">
-                        <FontAwesomeIcon icon={faHandshake} className="card-icon" />
-                        <h3 className="card-title">Payment & Collection</h3>
-                        <p className="card-description">
-                            If your bid is successful, you will receive an invoice. After payment is confirmed, you will receive instructions to collect or receive your item, completing the transaction.
-                        </p>
-                    </Box>
-                </Box>
-            </Container>
-        </Box>
-    );
+// Styled Components for custom styling
+const SpecializationSection = styled(Box)`
+  background-color: #f5f5f5;
+  padding: 60px 0;
+  text-align: center;
+`;
+
+const SectionHeader = styled(Typography)`
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+`;
+
+const StyledCard = styled(Card)`
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 12px;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+const StyledCardMedia = styled(CardMedia)`
+  height: 200px;
+  object-fit: cover;
+`;
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
 };
 
-export default BiddingProcedure;
+const Specialization = () => {
+  const specializations = [
+    {
+      title: "Experience",
+      description: "Over the years, we have provided Auctioneer services to various clients such as big corporates, transport companies and law firms.",
+      image: experienceImage,
+    },
+    {
+      title: "Team",
+      description: "We are experts in the field of Auctioneering. Our company believes in women empowerment and our staff is predominantly female.",
+      image: teamImage,
+    },
+    {
+      title: "Membership",
+      description: "Member of the South African Institute of Auctioneers (SAIA) & Member of the Limpopo Chamber of Commerce and Industry (LCCI).",
+      image: membershipImage,
+    },
+  ];
+
+  return (
+    <SpecializationSection>
+      <Container maxWidth="lg">
+        <SectionHeader variant="h2">Our Specializations</SectionHeader>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <Grid container spacing={4} justifyContent="center">
+            {specializations.map((spec, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <motion.div variants={cardVariants}>
+                  <StyledCard>
+                    <StyledCardMedia
+                      component="img"
+                      image={spec.image}
+                      alt={spec.title}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div" fontWeight="bold">
+                        {spec.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {spec.description}
+                      </Typography>
+                    </CardContent>
+                  </StyledCard>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </motion.div>
+      </Container>
+    </SpecializationSection>
+  );
+};
+
+export default Specialization;

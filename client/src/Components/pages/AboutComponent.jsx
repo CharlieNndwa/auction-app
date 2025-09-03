@@ -1,227 +1,166 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { Container, Typography, Box, Grid } from "@mui/material";
 
-// Example image imports
-import img1 from "../../assets/z.jpg";
-import img2 from "../../assets/k.jpg";
-import img3 from "../../assets/ll.jpg";
-import img4 from "../../assets/ghg.jpg";
+
 
 // Styled Components
-const AboutWrapper = styled.div`
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem 1rem;
+const AboutWrapper = styled(Box)`
+  padding: 2rem 0;
+  background-color: #f9fafb;
 `;
 
-const HeaderSection = styled.section`
+const SectionContainer = styled(Container)`
+  padding: 3rem 1rem;
+`;
+
+const SectionHeader = styled(Typography)`
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1a202c;
   text-align: center;
-  margin-bottom: 3rem;
+  position: relative;
 
-  .heading-with-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-
-    h1 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #1f2937;
-      position: relative;
-
-      /* Unique underline */
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -8px;
-        width: 100%;
-        height: 5px;
-        border-radius: 6px;
-        background: linear-gradient(90deg, #2563eb, #7c3aed, #ec4899);
-        animation: underlineSlide 3s infinite alternate;
-      }
-    }
-
-    .heading-icon {
-      width: 38px;
-      height: 38px;
-      object-fit: contain;
-    }
-  }
-
-  p {
-    margin-top: 1.5rem;
-    font-size: 1.1rem;
-    color: #4b5563;
-    line-height: 1.6;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @keyframes underlineSlide {
-    from {
-      background-position: 0% 50%;
-    }
-    to {
-      background-position: 100% 50%;
-    }
+  &:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #2c5282;
+    margin: 10px auto 0;
+    border-radius: 2px;
   }
 `;
 
-const ContentSection = styled.section`
-  margin-bottom: 3rem;
+const FeatureCard = styled(Box)`
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
 
-  h2 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #111827;
-  }
-
-  p {
-    margin-bottom: 1rem;
-    color: #374151;
-    line-height: 1.7;
+  &:hover {
+    transform: translateY(-5px);
   }
 `;
 
-const GallerySection = styled.section`
-  .gallery-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+const ValueList = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+`;
 
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
+const GallerySection = styled(Box)`
+  padding: 3rem 1rem;
+  background: #f1f5f9;
+`;
 
-    .scroll-buttons button {
-      margin-left: 0.5rem;
-      background: #111827;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 0.75rem;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: background 0.3s;
+const ImageRow = styled(Box)`
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem; // Prevents content from being hidden behind scrollbar
 
-      &:hover {
-        background: #374151;
-      }
-    }
+  &::-webkit-scrollbar {
+    height: 8px;
   }
-
-  .image-row {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-
-    img {
-      flex-shrink: 0;
-      width: 280px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease-in-out;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
+  &::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    border-radius: 10px;
   }
+  &::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+`;
 
-  /* Hide scrollbar */
-  .image-row::-webkit-scrollbar {
-    display: none;
+const GalleryImage = styled.img`
+  flex-shrink: 0;
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 
 const About = () => {
-  const images = [img1, img2, img3, img4];
+  const images = [
+    "https://cdn.corporatefinanceinstitute.com/assets/auction.jpeg",
+    "https://judicateme.com/wp-content/uploads/2020/06/Auction-Sale-JudicateMe.jpg",
+    "https://www.in2assets.co.za/uploads/blogs/1750413550-1665630122/image_the-true-value-of-auctions_O2WhcGkPQuse.jpg",
+    "https://cdn.lawnet.vn/uploads/tintuc/2022/11/22/hinh-thuc-dau-gia-tai-san.png",
+    "https://media.citizen.co.za/wp-content/uploads/2024/06/Auction-Warehouse.jpg",
+  ];
 
   const scrollLeft = () => {
-    document
-      .getElementById("imageRow")
-      .scrollBy({ left: -300, behavior: "smooth" });
+    document.getElementById("imageRow").scrollBy({ left: -300, behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    document
-      .getElementById("imageRow")
-      .scrollBy({ left: 300, behavior: "smooth" });
+    document.getElementById("imageRow").scrollBy({ left: 300, behavior: "smooth" });
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <AboutWrapper>
-        <HeaderSection>
-          <div className="heading-with-icon">
-            <h1>About Ntirano Auctioneers</h1>
-            <img
-              src="https://png.pngtree.com/png-vector/20220729/ourmid/pngtree-auction-icon-png-image_6090642.png"
-              alt="Auction Icon"
-              className="heading-icon"
-            />
-          </div>
-          <p>
-            Ntirano Auctioneers is a trusted leader in the auction industry,
-            delivering seamless, transparent, and professional services for
-            buyers and sellers across South Africa. With years of combined
-            expertise, our mission is to ensure that every transaction is
-            conducted with integrity, efficiency, and unmatched service
-            excellence.
-          </p>
-        </HeaderSection>
+    <AboutWrapper>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <SectionContainer maxWidth="lg">
+          <SectionHeader variant="h3">About Ntirano Auctioneers</SectionHeader>
+          <Typography variant="body1" align="center" color="text.secondary" mb={5}>
+            Ntirano Auctioneers is a trusted leader in the auction industry, delivering seamless, transparent, and professional services for buyers and sellers across South Africa. With years of combined expertise, our mission is to ensure that every transaction is conducted with integrity, efficiency, and unmatched service excellence.
+          </Typography>
 
-        <ContentSection>
-          <h2>Who We Are</h2>
-          <p>
-            At Ntirano, we are more than just auctioneers — we are facilitators
-            of opportunity. Our dedicated team of professionals is committed to
-            connecting individuals and businesses with the assets they need
-            while helping sellers achieve the best possible value for their
-            goods. We specialize in property, vehicles, and commercial assets,
-            always upholding the highest industry standards.
-          </p>
+          <Grid container spacing={4} alignItems="center">
+            {/* "Who We Are" Section */}
+            <Grid item xs={12} md={6}>
+              <Box mb={4}>
+                <Typography variant="h4" component="h2" fontWeight="bold" gutterBottom>
+                  Who We Are
+                </Typography>
+                <Typography variant="body1" color="text.secondary">
+                  Ntirano Auctioneers is a **level 1 contributor company** established in **2018** and situated at **Stand Number 427, Rapitsi Village in Limpopo**. Our core business services cover all aspects of the auction from liquidations, valuations and storage, with expertise in Asset disposals of movable assets and members of the Estate Agency Affairs Board with valid Fidelity Fund certificate. We pride ourselves with efficient, professional and ethical service to our clients.
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box sx={{ width: '100%', height: 'auto', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+                <img src="https://cdn.corporatefinanceinstitute.com/assets/auction.jpeg" alt="Ntirano team" style={{ width: '100%', display: 'block' }} />
+              </Box>
+            </Grid>
+          </Grid>
+        </SectionContainer>
+ 
 
-          <p>
-            Our core values — honesty, transparency, and innovation — are at the
-            heart of everything we do. Whether you are a seasoned investor or a
-            first-time bidder, Ntirano Auctioneers is here to guide you through
-            every step of the process.
-          </p>
-        </ContentSection>
 
         <GallerySection>
-          <div className="gallery-header">
-            <h2>Our Work in Action</h2>
-            <div className="scroll-buttons">
-              <button onClick={scrollLeft}>◀</button>
-              <button onClick={scrollRight}>▶</button>
-            </div>
-          </div>
-          <div className="image-row" id="imageRow">
-            {images.map((src, idx) => (
-              <img key={idx} src={src} alt={`Ntirano auction ${idx + 1}`} />
-            ))}
-          </div>
+          <Container maxWidth="lg">
+            <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+              <Typography variant="h5" fontWeight="bold">Our Work in Action</Typography>
+              <Box>
+                <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={scrollLeft} style={{ marginRight: '1rem' }}>◀</motion.button>
+                <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={scrollRight}>▶</motion.button>
+              </Box>
+            </Box>
+            <ImageRow id="imageRow">
+              {images.map((src, idx) => (
+                <GalleryImage key={idx} src={src} alt={`Ntirano auction ${idx + 1}`} />
+              ))}
+            </ImageRow>
+          </Container>
         </GallerySection>
-      </AboutWrapper>
-    </motion.div>
+      </motion.div>
+    </AboutWrapper>
   );
 };
 

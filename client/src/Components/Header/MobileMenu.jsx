@@ -36,9 +36,8 @@ const MobileMenu = ({ isOpen, onClose }) => {
                         </ul>
                     )}
                 </li>
-                <li><Link to="/bidding-process" onClick={handleLinkClick}>How to Bid</Link></li>
-                <li><Link to="/services" onClick={handleLinkClick}>Services</Link></li>
-                <li><Link to="/projects" onClick={handleLinkClick}>Projects</Link></li>
+                <li><Link to="/our-services" onClick={handleLinkClick}>Services</Link></li>
+                
                 <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
             </ul>
         </div>

@@ -147,7 +147,7 @@ function App() {
                     <Route path='/' element={<HomePage />} />
                     <Route path='/about' element={<AboutPage />} />
                     <Route path="/projects" element={<ProjectPage />} />
-                    <Route path="/bidding-process" element={<HowToBid />} />
+                    <Route path="/our-services" element={<HowToBid />} />
                     <Route path="/rules-of-auction" element={<RulesOfAuction />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/projects/spot-tec" element={

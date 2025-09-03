@@ -61,7 +61,7 @@ const Header = styled.header`
       height: 48px;
     }
   }
-`
+`;
 
 const SectionTitle = styled.h2`
   font-size: 1.15rem;
@@ -80,155 +80,46 @@ const P = styled.p`
   text-align: center;
 `;
 
+const Ul = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 72ch;
+  text-align: left;
+`;
+
+const Li = styled.li`
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: #374151;
+`;
+
 /** ——— Component ——— */
 const RulesOfAuction = () => {
   return (
     <Page>
       <Card className="rules-card">
         <Header className="rules-header">
-            <img src={logo} alt="Ntirano Auctioneers logo" />
-          <h1>Rules of Auction</h1>
-          
+          <img src={logo} alt="Ntirano Auctioneers logo" />
+          <h1>Conditions of Sale</h1>
         </Header>
 
-        <P>
-          Welcome to <strong>Ntirano Auctioneers</strong>. These Rules of Auction
-          govern all live, online and hybrid auctions conducted by us. By
-          registering and/or bidding, every participant confirms that they
-          have read, understood and agree to be bound by these rules.
-        </P>
-
-        <SectionTitle>1) Registration & FICA</SectionTitle>
-        <P>
-          All bidders must register prior to bidding and submit valid
-          identification, proof of address and any documents required under FICA/POPIA.
-          Company bidders must provide company registration docs and a
-          letter of authority.
-        </P>
-
-        <SectionTitle>2) Deposits</SectionTitle>
-        <P>
-          A refundable registration deposit may be required and will be specified per
-          auction. Deposits are returned once all obligations are met or when an
-          application is unsuccessful, less any charges due.
-        </P>
-
-        <SectionTitle>3) Bidding Procedure</SectionTitle>
-        <P>
-          Bids are irrevocable once made. The highest accepted bid at the fall of
-          the hammer (or system close for online) constitutes a binding sale,
-          subject to any stated reserve or seller confirmation.
-        </P>
-
-        <SectionTitle>4) Reserve, Seller & Vendor Bids</SectionTitle>
-        <P>
-          Lots may be sold with or without reserve. The Auctioneer may accept
-          seller/vendor bids where disclosed. The Auctioneer may withdraw, split,
-          or group lots and may refuse any bid at their sole discretion.
-        </P>
-
-        <SectionTitle>5) “Voetstoots” (As-Is)</SectionTitle>
-        <P>
-          All assets are sold “voetstoots”, without warranty or guarantee unless
-          expressly stated. Descriptions, photos and guides are provided in good
-          faith but are not warranties. Buyers must rely on their own inspection.
-        </P>
-
-        <SectionTitle>6) Inspection & Due Diligence</SectionTitle>
-        <P>
-          Viewing times will be advertised. It is the bidder’s responsibility to
-          inspect lots and satisfy themselves as to condition, fitness, quantity
-          and compliance prior to bidding.
-        </P>
-
-        <SectionTitle>7) Buyer’s Commission & VAT</SectionTitle>
-        <P>
-          Buyer’s commission (if applicable) and VAT will be charged at the rates
-          stated in the auction notice/lot catalogue. The total amount payable is
-          the hammer price plus buyer’s commission and applicable taxes.
-        </P>
-
-        <SectionTitle>8) Invoices & Payment</SectionTitle>
-        <P>
-          Successful bidders must settle invoices in full within the specified
-          period (typically 24–72 hours) by cleared EFT or other accepted method.
-          Cash handling fees and bank charges are for the buyer’s account.
-        </P>
-
-        <SectionTitle>9) Risk, Title & Collection</SectionTitle>
-        <P>
-          Risk passes to the buyer at the fall of the hammer/system close. Title
-          passes only upon full and cleared payment. Collection is by appointment
-          within the stated removal window; bring proof of payment and ID.
-        </P>
-
-        <SectionTitle>10) Storage, Handling & Default</SectionTitle>
-        <P>
-          Late collections may attract storage/handling fees. If a buyer fails to
-          pay or collect, Ntirano Auctioneers may cancel the sale, forfeit
-          deposits, and/or re-auction the goods. Any shortfall and costs will be
-          for the buyer’s account.
-        </P>
-
-        <SectionTitle>11) Vehicles & Licencing</SectionTitle>
-        <P>
-          Vehicles are sold as-is. Where NaTIS papers are available, details will
-          be disclosed. Roadworthy, COR, keys, spare wheels or service histories
-          are not guaranteed unless specifically stated.
-        </P>
-
-        <SectionTitle>12) Real Property & Special Conditions</SectionTitle>
-        <P>
-          Property sales may be subject to seller confirmation, suspensive
-          conditions, occupancy status and compliance certificates. Refer to the
-          property-specific conditions of sale supplied before the auction.
-        </P>
-
-        <SectionTitle>13) Online & Telephone Bidding</SectionTitle>
-        <P>
-          Remote bidders must ensure reliable connectivity and pre-approval.
-          Ntirano Auctioneers accepts no liability for interruptions, timeouts or
-          technical failures.
-        </P>
-
-        <SectionTitle>14) Safety & Access</SectionTitle>
-        <P>
-          Auction sites are working environments. Entry is at one’s own risk.
-          PPE may be required. Children and pets are not permitted in hazardous
-          areas.
-        </P>
-
-        <SectionTitle>15) Indemnity</SectionTitle>
-        <P>
-          Ntirano Auctioneers, its representatives and the seller will not be
-          liable for any loss, damage, injury or consequential damages sustained
-          on the premises or arising from participation in the auction.
-        </P>
-
-        <SectionTitle>16) POPIA & Privacy</SectionTitle>
-        <P>
-          By registering, bidders consent to the processing of personal
-          information for FICA/POPIA compliance, bidder verification and auction
-          administration. Data is handled in accordance with applicable laws.
-        </P>
-
-        <SectionTitle>17) Disputes</SectionTitle>
-        <P>
-          In the event of a dispute, the Auctioneer’s decision is final. The
-          Auctioneer may reopen bidding or withdraw a lot to resolve any dispute.
-        </P>
-
-        <SectionTitle>18) Jurisdiction</SectionTitle>
-        <P>
-          These rules are governed by the laws of the Republic of South Africa.
-          The parties consent to the jurisdiction of the appropriate South
-          African courts.
-        </P>
-
-        <P>
-          By bidding with Ntirano Auctioneers you acknowledge these Rules of
-          Auction and agree to be bound by them. Thank you for your participation.
-        </P>
+        <Ul>
+          <Li>The highest accepted bidder shall be the purchaser.</Li>
+          <Li>The Auctioneer has the right to regulate the bidding. He may furthermore withdraw any item at any time.</Li>
+          <Li>The Auctioneer does not hold himself responsible for any errors of description. A bid shall be taken as proof that the bidder has made himself/herself acquainted with the conditions for lots for which he/she bids.</Li>
+          <Li>All goods are sold as is.</Li>
+          <Li>Lots once knocked down remain at the risk of the purchaser.</Li>
+          <Li>No goods may be removed until paid for.</Li>
+          <Li>All sales are final.</Li>
+          <Li>15% Buyer’s Commission.</Li>
+          <Li>Valid TV licence and identity document.</Li>
+          <Li>Fica documents will be required.</Li>
+          <Li>No goods may be removed until the payment reflects in the account.</Li>
+          <Li>R5000 deposit is compulsory upon registration.</Li>
+          <Li>R10 000 registration fee for bidding for vehicles</Li>
+          <Li>Should a bidder bid for an item and fail to pay for it, the deposit will be forfeited.</Li>
+        </Ul>
       </Card>
     </Page>
   );

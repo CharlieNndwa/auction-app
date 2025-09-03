@@ -436,7 +436,7 @@ const Header = () => {
                   </List>
                   <List>
                     <RulesBadgeLink to="/rules-of-auction">
-                      Rules of Auction
+                      Conditions of Sale
                     </RulesBadgeLink>
                   </List>
                   <List
@@ -454,14 +454,10 @@ const Header = () => {
                     </BussinesServiceList>
                   </List>
                   <List>
-                    <StyledLink to="/bidding-process">How to Bid</StyledLink>
+                    <StyledLink to="/our-services">Services</StyledLink>
                   </List>
-                  <List>
-                    <StyledLink to="/services">Services</StyledLink>
-                  </List>
-                  <List>
-                    <StyledLink to="/projects">Projects</StyledLink>
-                  </List>
+             
+                  
                   <List>
                     <StyledLink to="/contact">Contact</StyledLink>
                   </List>

@@ -1,12 +1,15 @@
 import React from 'react'
 import AboutComponent from '../Components/pages/AboutComponent'
-import Specialization from '../Components/pages/Home/Specialization'
+import Philosophy from '../Components/pages/Philosophy'
+import ExperiencedBanner from '../Components/pages/Home/ExperiencedBanner'
+import Client from "../Components/pages/Home/Client";
 
 const AboutPage = () => {
   return (
     <>
-        <AboutComponent />
-        <Specialization />
+          <Client />
+        <Philosophy />
+        <ExperiencedBanner />
     </>
   )
 }
