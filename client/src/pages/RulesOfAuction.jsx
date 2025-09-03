@@ -28,7 +28,7 @@ const Card = styled.article`
 
 const Header = styled.header`
   display: flex;
-  justify-content: space-between; /* logo left, heading right */
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #eef0f4;
   padding-bottom: 1rem;
@@ -50,7 +50,7 @@ const Header = styled.header`
   }
 
   @media (max-width: 640px) {
-    flex-direction: column; /* stack logo above heading on mobile */
+    flex-direction: column;
     gap: 0.75rem;
     text-align: center;
 
@@ -80,12 +80,14 @@ const P = styled.p`
   text-align: center;
 `;
 
-const Ul = styled.ul`
-  list-style: none;
+// Replaced Ul with Ol for an ordered list
+const Ol = styled.ol`
   padding: 0;
   margin: 1rem auto;
   max-width: 72ch;
   text-align: left;
+  list-style: decimal; /* Ensures numbers are shown */
+  padding-left: 20px; /* Adds space for the numbers */
 `;
 
 const Li = styled.li`
@@ -104,7 +106,8 @@ const RulesOfAuction = () => {
           <h1>Conditions of Sale</h1>
         </Header>
 
-        <Ul>
+        {/* Changed Ul to Ol */}
+        <Ol>
           <Li>The highest accepted bidder shall be the purchaser.</Li>
           <Li>The Auctioneer has the right to regulate the bidding. He may furthermore withdraw any item at any time.</Li>
           <Li>The Auctioneer does not hold himself responsible for any errors of description. A bid shall be taken as proof that the bidder has made himself/herself acquainted with the conditions for lots for which he/she bids.</Li>
@@ -119,7 +122,7 @@ const RulesOfAuction = () => {
           <Li>R5000 deposit is compulsory upon registration.</Li>
           <Li>R10 000 registration fee for bidding for vehicles</Li>
           <Li>Should a bidder bid for an item and fail to pay for it, the deposit will be forfeited.</Li>
-        </Ul>
+        </Ol>
       </Card>
     </Page>
   );

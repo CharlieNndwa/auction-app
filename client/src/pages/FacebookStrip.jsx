@@ -34,16 +34,34 @@ const FacebookIconWrapper = styled(Box)`
     gap: 10px;
 `;
 
+const FacebookLink = styled.a`
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    &:hover {
+        color: #3b5998; /* Change text color on hover */
+        .facebook-icon {
+            transform: scale(1.1); /* Slightly enlarge icon on hover */
+        }
+    }
+`;
+
 const FacebookStrip = () => {
     return (
         <FacebookStripContainer>
             <FacebookStripContent maxWidth="lg">
-                <FacebookIconWrapper>
-                    <FacebookStripText variant="body1">
-                        Please visit our facebook page for more information
-                    </FacebookStripText>
-                    <FaFacebook size={24} color="#3b5998" />
-                </FacebookIconWrapper>
+                <FacebookLink href="https://www.facebook.com/ntirano.auctioneers" target="_blank" rel="noopener noreferrer">
+                    <FacebookIconWrapper>
+                        <FacebookStripText variant="body1">
+                            Please visit our facebook page for more information
+                        </FacebookStripText>
+                        <FaFacebook size={24} color="#3b5998" className="facebook-icon" />
+                    </FacebookIconWrapper>
+                </FacebookLink>
             </FacebookStripContent>
         </FacebookStripContainer>
     );
