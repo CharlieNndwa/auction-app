@@ -48,12 +48,18 @@ const MainCardContent = styled(CardContent)`
 const GallerySection = styled(Box)`
   margin-top: 20px;
   text-align: left;
+  
   .gallery-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+
+    h2 {
+      color: #000; // This makes the "Image Gallery" text black
+    }
   }
+
   .scroll-buttons button {
     background: #e0e0e0;
     border: none;
@@ -65,6 +71,7 @@ const GallerySection = styled(Box)`
       background: #c0c0c0;
     }
   }
+
   .image-row {
     display: flex;
     overflow-x: scroll;

@@ -108,9 +108,7 @@ const SAIABanner = () => {
               <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
                 Experienced & Qualified Auctioneers
               </Typography>
-              <Typography variant="body1" color="text.secondary">
-                The South African Institute of Auctioneers (SAIA) is the official professional body for the auction industry in South Africa. Being a member signifies adherence to a strict code of conduct and industry standards, providing peace of mind to clients and protecting their rights.
-              </Typography>
+              
             </TextContainer>
           </BannerCard>
         </Container>

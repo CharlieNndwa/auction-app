@@ -11,6 +11,7 @@ import {
   faFilePdf,
 } from "@fortawesome/free-solid-svg-icons";
 
+
 /* ----------------- Styled Components ---------------- */
 const PageContainer = styled(motion.div)`
   background-color: #ffffff;
@@ -394,21 +395,21 @@ const HowToBid = () => {
     },
   ];
 
-  const downloadButtons = [
+const downloadButtons = [
     {
       label: "(Computer hardware and systems list)",
       text: "Download File",
-      link: "./",
+      link: "/COMPUTER-HARDWARE-SYSTEMS.pdf", // Correct link
     },
     {
       label: "(Office furniture and equipment list)",
       text: "Download File",
-      link: "/path/to/office-list.pdf",
+      link: "/Office-furniture-and-equipment.pdf", // Correct link
     },
     {
       label: "(Machinery and equipment)",
       text: "Download File",
-      link: "/path/to/machinery-list.pdf",
+      link: "/Machinery-and-equipment.pdf", // Correct link
     },
   ];
 

@@ -24,7 +24,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             <ul className="mobile-ul">
                 <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
                 <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
-                <li><Link to="/rules-of-auction" onClick={handleLinkClick}>Rules of Auction</Link></li>
+                <li><Link to="/rules-of-auction" onClick={handleLinkClick}>Conditions Of Sale</Link></li>
                 <li className={`dropdown-container ${isAuctionsOpen ? 'open' : ''}`}>
                     <div className="dropdown-trigger" onClick={handleToggleAuctions}>
                         Live Auctions <FontAwesomeIcon icon={faSquareCaretDown} className="dropdown-icon" />
