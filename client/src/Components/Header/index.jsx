@@ -10,12 +10,9 @@ import { UserContext } from "../../UserContext";
 
 // Import icons from your Font Awesome package
 import {
-  
-
-
   faPhone,
   faEnvelope,
-
+  faMapMarkerAlt
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -342,7 +339,7 @@ const Header = () => {
                   079 297 9852
                 </ContactInfoItem>
                 <ContactInfoItem>
-                  <FontAwesomeIcon icon={faEnvelope} />
+                  <FontAwesomeIcon icon={ faMapMarkerAlt} />
                   pontsho@ntirano.co.za
                 </ContactInfoItem>
               </ContactInfoContainer>
@@ -380,6 +377,10 @@ const Header = () => {
                 <ContactInfoItem>
                   <FontAwesomeIcon icon={faEnvelope} />
                   pontsho@ntirano.co.za
+                </ContactInfoItem>
+                <ContactInfoItem>
+                  <FontAwesomeIcon icon={faLocation} />
+                  427 Rapitsi Village, Limpopo
                 </ContactInfoItem>
               </ContactInfoContainer>
               {/* <RightButtonsContainer>

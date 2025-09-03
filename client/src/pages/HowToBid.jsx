@@ -398,7 +398,7 @@ const HowToBid = () => {
     {
       label: "(Computer hardware and systems list)",
       text: "Download File",
-      link: "/path/to/computer-list.pdf",
+      link: "./",
     },
     {
       label: "(Office furniture and equipment list)",

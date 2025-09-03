@@ -29,6 +29,7 @@ import image20 from "../assets/jj.jpg";
 import excavator1 from "../assets/rsd.jpg";
 import drillRig1 from "../assets/yap.jpg";
 
+
 // Styled Components
 const MainImage = styled.img`
   width: 100%;
@@ -256,6 +257,8 @@ const VideoFooter = styled(Box)`
   }
 `;
 
+const mainswag="https://www.ntirano.co.za/wp-content/uploads/2023/01/WhatsApp-Image-2023-01-14-at-6.22.55-PM.jpeg"
+
 const PreviousAuctions = () => {
   const previousAuctionData = [
     {
@@ -290,7 +293,7 @@ const PreviousAuctions = () => {
       id: 5,
       title: "Industrial Machinery Auction",
       date: "12 December 2022",
-      mainImage: image10,
+      mainImage: mainswag,
       images: [image17, image18, image19, image20, image1]
     },
     {

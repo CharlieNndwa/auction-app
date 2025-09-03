@@ -62,8 +62,22 @@ const ActionButton = styled(motion.button)`
         transform: scale(1.05);
         box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
     }
+
+    @media (max-width: 600px) {
+        width: 80%; /* Make buttons full-width on mobile */
+        margin: 10px 0; /* Add vertical spacing between buttons */
+    }
 `;
 
+const ButtonContainer = styled(motion.div)`
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 600px) {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: center; /* Center buttons horizontally */
+    }
+`;
 
 const HeroSection = () => {
     return (
@@ -76,10 +90,10 @@ const HeroSection = () => {
                     variants={staggerContainer}
                 >
                     <motion.h1 variants={fadeIn}>Ntirano Auctioneers</motion.h1>
-                    <motion.div variants={fadeIn}>
+                    <ButtonContainer variants={fadeIn}>
                         <ActionButton as={Link} to="/about">About Us</ActionButton>
                         <ActionButton as={Link} to="/our-services">Services</ActionButton>
-                    </motion.div>
+                    </ButtonContainer>
                 </motion.div>
             </HeroContainer>
         </div>

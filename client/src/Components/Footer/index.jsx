@@ -78,7 +78,7 @@ const Footer = () => {
                 <img src={logo} alt="Ntiranoo Logo" />
               </LogoSize>
               <Box sx={{ color: "#ebebeb", mt: 2 }}>
-                <Typography>Address: Limpopo, Polokwane</Typography>
+                <Typography>Address: 427 Rapitsi Village, Limpopo</Typography>
                 <Typography>Tel: 015 001 1117</Typography>
                 <Typography>Cel: 079 297 9852</Typography>
                 <Typography>Email: pontsho@ntirano.co.za</Typography>
@@ -122,7 +122,7 @@ const Footer = () => {
                   <StyledLinks to="/projects">Projects</StyledLinks>
                 </StyledItem>
                 <StyledItem>
-                  <StyledLinks to="/bidding-process">How to Bid</StyledLinks>
+                  <StyledLinks to="/our-services">Services</StyledLinks>
                 </StyledItem>
                 <StyledItem>
                   <StyledLinks to="/contact">Contact</StyledLinks>

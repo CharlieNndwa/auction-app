@@ -76,7 +76,7 @@ const ContactComponent = () => {
                                 <StyledIconWrapper>
                                     <FaMapMarkerAlt className="icon" />
                                     <Typography className="text">
-                                        Limpopo
+                                        427 Rapitsi Village, Limpopo
                                     </Typography>
                                 </StyledIconWrapper>
                                 <StyledIconWrapper>
